@@ -1,9 +1,15 @@
 import React from 'react'
-import { View } from 'react-native'
+
+import { NavigationContainer } from '@react-navigation/native'
+
 import Home from './screens/Home'
 
 function App() {
-  return <Home />
+  return (
+    <NavigationContainer>
+      <Home />
+    </NavigationContainer>
+  )
 }
 
 export default App
