@@ -51,14 +51,6 @@ export default {
     const { id } = req.params
 
     try {
-
-      if (typeof id === 'string') {
-        return res.status(400).json({
-          status: 400,
-          error: 'Please enter an id'
-        })
-      }
-
       const parser = new Parser({
         customFields: {
           feed:  ['enclosure', 'itunes'],
@@ -69,13 +61,6 @@ export default {
       })
   
       const feed = await parser.parseURL('https://anchor.fm/s/39d1be18/podcast/rss')
-
-      if (id > feed.items.length) {
-        return res.status(400).json({
-          status: 400,
-          error: 'This id does not exist'
-        })
-      }
 
       const currentFeed = feed.items[Number(id)]
 
