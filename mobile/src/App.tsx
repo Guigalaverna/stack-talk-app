@@ -2,14 +2,14 @@ import React from 'react'
 
 import { NavigationContainer } from '@react-navigation/native'
 
-import Home from './screens/Home'
 import PlayerProvider from './contexts/PlayerContext'
+import AppRoutes from './routes/App.routes'
 
 function App() {
   return (
     <NavigationContainer>
       <PlayerProvider>
-        <Home />
+        <AppRoutes />
       </PlayerProvider>
     </NavigationContainer>
   )
