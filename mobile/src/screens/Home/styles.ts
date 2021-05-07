@@ -12,9 +12,9 @@ export default StyleSheet.create({
     fontFamily: "Jost-Medium",
     fontSize: 24,
     color: "white",
-    alignSelf: "center",
+    alignSelf: "flex-start",
 
-    marginLeft: 20,
+    marginLeft: 30,
     marginTop: 20,
   },
 
@@ -38,11 +38,20 @@ export default StyleSheet.create({
     alignSelf: "center",
     // alignItems: "center",
     // justifyContent: "center",
-    height: 305,
+    height: 150,
     width: Dimensions.get("window").width,
     marginTop: 50,
     marginHorizontal: 10,
 
     position: "relative",
   },
+
+  anotherEpisodesCard: {
+    width: 90,
+    height: 90,
+    borderRadius: 15,
+
+    marginLeft: 50,
+    marginTop: 20,
+  }
 })
