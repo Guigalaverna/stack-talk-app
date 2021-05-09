@@ -31,7 +31,6 @@ function Home() {
     }
 
     getEpisodes();
-    tooglePlaying()
   }, []);
 
   const fiveEpisodes = episodeList?.items.slice(0, 5);

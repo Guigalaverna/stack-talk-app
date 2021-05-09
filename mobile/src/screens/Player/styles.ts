@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { Dimensions, StyleSheet } from "react-native";
 import colors from "../../styles/theme/colors";
 
 export default StyleSheet.create({
@@ -6,6 +6,7 @@ export default StyleSheet.create({
     flex: 1,
     backgroundColor: colors.background,
     alignItems: "center",
+    position: "relative"
   },
 
   header: {
@@ -20,5 +21,14 @@ export default StyleSheet.create({
     color: "white",
     marginTop: 20,
     marginHorizontal: 15
+  },
+  buttons: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    position: "absolute",
+    bottom: Dimensions.get('window').height - 650,
+    width: '100%',
+    paddingHorizontal: 55
   }
 })

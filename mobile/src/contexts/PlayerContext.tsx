@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from 'react';
-import { Episode, Episodes } from '../../@types/Episode';
+import { Episodes } from '../../@types/Episode';
 
 interface ProviderProps {
   children: React.ReactNode
@@ -10,6 +10,7 @@ interface ContextData {
   isPlaying: boolean
   isShuffling: boolean
   isLooping: boolean
+  currentEpisodeIndex: number
 
   addEpisodes: (episodes: Episodes) => void
   play: (episode: any) => void
@@ -17,6 +18,7 @@ interface ContextData {
   toogleShuffling: () => void
   tooglePlaying: () => void
   clearPlayingState: () => void
+  changeCurrentEpisodeIndex: (id: number) => void
 }
 
 const Context = createContext({} as ContextData);
@@ -40,11 +42,18 @@ export default function PlayerProvider({ children }: ProviderProps) {
     clearPlayingState,
     isLooping,
     isPlaying,
-    isShuffling
+    isShuffling,
+    currentEpisodeIndex,
+    changeCurrentEpisodeIndex
+  }
+
+  function changeCurrentEpisodeIndex(id: number) {
+    setCurrentEpisodeIndex(id)
   }
 
   function addEpisodes(episodes: Episodes) {
     setEpisodeList(episodes)
+    setIsPlaying(true)
   }
 
   function play(episode: any) {
@@ -67,6 +76,10 @@ export default function PlayerProvider({ children }: ProviderProps) {
   function clearPlayingState() {
     setIsPlaying(false)
     setEpisodeList([])
+  }
+
+  function playNextEpisode() {
+    // set
   }
 
   return (
