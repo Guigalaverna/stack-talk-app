@@ -20,7 +20,7 @@ import MiniCard from "../../components/MiniCard";
 import { useNavigation } from "@react-navigation/core";
 
 function Home() {
-  const { addEpisodes, episodeList } = usePlayer();
+  const { addEpisodes, episodeList, tooglePlaying } = usePlayer();
   const { navigate } = useNavigation();
 
   useEffect(() => {
@@ -31,6 +31,7 @@ function Home() {
     }
 
     getEpisodes();
+    tooglePlaying()
   }, []);
 
   const fiveEpisodes = episodeList?.items.slice(0, 5);
