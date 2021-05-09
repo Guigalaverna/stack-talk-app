@@ -2,8 +2,8 @@
 	<img src='./.github/Capa.png' />
 	<h1>Stack Talk App</h1>
 	<p>Unofficial application of the Stack Talk podcast presented by Bruno Germano with incredible devs</p>
-	<a>English |</a>
-	<a>Portuguese</a>
+	<a href='./README.md'>English |</a>
+	<a href='./PORTUGUESE.md'>Portuguese</a>
 </div>
 
 ## 🤔 Inspiration
